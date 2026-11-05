@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Gameday — Every Player Deserves an Entrance</title>
+  <meta name="description" content="Walkout music and AI player announcements for youth sports. Coming soon to the App Store." />
+  <meta name="theme-color" content="#0064FF" />
+  <!-- The light icon by default (and on dark tab bars); light tab bars get
+       the dark icon. -->
+  <link rel="icon" type="image/png" sizes="48x48" href="/images/favicon-light.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/images/favicon-dark.png" media="(prefers-color-scheme: light)" />
+  <link rel="stylesheet" href="/fonts/fonts.css" />
+  <style>
+    /* Shown at getgameday.app until the full site launches: _redirects
+       serves this page for "/". Remove that line to put index.html live. */
+    :root {
+      --hero-blue: #0064FF;
+      --white: #FFFFFF;
+      --field-border: #D6E4FF;
+      --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+      --font-logo: "Syne", "Arial Black", sans-serif;
+      --font-accent: "Yellowtail", "Brush Script MT", cursive;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; }
+    /* Two tones: the blue hero ends in a hard cut just below "Coming soon",
+       and the sign-up sits on white beneath it. */
+    body {
+      background: var(--white);
+      font: 18px/1.5 var(--font-body);
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+    .hero, .signup-band {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-left: max(24px, env(safe-area-inset-left));
+      padding-right: max(24px, env(safe-area-inset-right));
+    }
+    .hero {
+      background: var(--hero-blue);
+      color: var(--white);
+      padding-top: max(56px, env(safe-area-inset-top));
+      padding-bottom: 56px;
+    }
+    .signup-band {
+      flex: 1;
+      color: var(--hero-blue);
+      padding-top: 48px;
+      padding-bottom: max(48px, env(safe-area-inset-bottom));
+    }
+    .hero { gap: 22px; }
+    .hero > * { max-width: 820px; }
+    /* Inline, so it shows however the page is opened. */
+    .badge { width: 88px; height: 106px; color: var(--white); }
+    /* Pure white: the paragraph dimming below doesn't apply to it. */
+    .wordmark { margin: 0; font: 800 clamp(17px, 4.5vw, 26px)/1 var(--font-logo); letter-spacing: 0.04em; text-transform: uppercase; opacity: 1; }
+    h1 { margin: 8px 0 0; font: 800 clamp(28px, 9vw, 76px)/1.05 var(--font-body); letter-spacing: -0.035em; }
+    /* Exactly two lines: each stays whole. */
+    h1 .line { display: block; white-space: nowrap; }
+    .accent-word { font-family: var(--font-accent); font-weight: 400; font-size: 1.1em; letter-spacing: 0; }
+    p { margin: 0; opacity: 0.86; text-wrap: balance; max-width: 560px; }
+    .signup { width: 100%; max-width: 440px; }
+    .signup h2 { margin: 0 0 4px; font: 600 22px/1.25 var(--font-body); color: var(--hero-blue); }
+    .signup > p { margin: 0 auto 20px; color: var(--hero-blue); opacity: 1; }
+    .signup form { display: flex; flex-wrap: wrap; gap: 10px; }
+    .signup input[type="email"] { flex: 1 1 220px; min-width: 0; border: 0; border-radius: 999px; padding: 14px 20px; font: 400 16px var(--font-body); color: #0A0A0B; background: var(--white); box-shadow: inset 0 0 0 1.5px var(--field-border); }
+    .signup button { flex: 0 0 auto; border: 0; border-radius: 999px; padding: 14px 24px; cursor: pointer; background: var(--hero-blue); color: var(--white); font: 600 16px var(--font-body); }
+    .signup button:disabled { opacity: 0.6; }
+    .signup input[type="email"]:focus-visible, .signup button:focus-visible { outline: 3px solid var(--hero-blue); outline-offset: 2px; }
+    /* Bots fill this in; people never see it. */
+    .signup .website { position: absolute; left: -9999px; }
+    .signup .signup-status { margin: 12px auto 0; color: var(--hero-blue); opacity: 1; }
+    .signup .signup-status:empty { display: none; }
+    .soon { margin-top: 10px; padding: 10px 20px; border-radius: 999px; background: rgba(255, 255, 255, 0.16); font-weight: 600; font-size: 16px; opacity: 1; }
+  </style>
+</head>
+<body>
+  <main class="hero">
+    <svg class="badge" viewBox="0 0 464 561" fill="currentColor" role="img" aria-label="Gameday">
+      <path d="M224.278 261.579C203.696 261.579 184.776 260.312 167.519 257.779C150.42 255.404 135.538 251.288 122.872 245.43C110.364 239.414 100.627 231.26 93.6611 220.969C86.8532 210.678 83.4492 197.695 83.4492 182.021C83.4492 166.347 86.9323 153.286 93.8985 142.836C100.865 132.229 110.839 123.838 123.822 117.663C136.962 111.33 152.557 106.818 170.606 104.126C188.813 101.435 209.079 100.089 231.402 100.089C260.692 100.089 285.232 102.781 305.023 108.164C324.971 113.547 340.17 121.225 350.62 131.2C361.069 141.016 366.689 152.732 367.481 166.347H305.735C303.835 162.864 300.352 159.54 295.286 156.373C290.219 153.048 282.62 150.357 272.487 148.299C262.354 146.24 248.659 145.211 231.402 145.211C211.137 145.211 194.671 146.478 182.005 149.011C169.34 151.386 160.078 155.265 154.22 160.648C148.362 166.031 145.433 173.155 145.433 182.021C145.433 189.779 148.441 196.191 154.457 201.258C160.473 206.324 170.131 210.124 183.43 212.657C196.729 215.19 214.303 216.457 236.152 216.457C251.509 216.457 264.808 215.823 276.049 214.557C287.449 213.132 297.74 210.995 306.922 208.145C316.264 205.295 325.525 201.733 334.708 197.458L340.408 204.345C330.592 222.869 316.026 237.039 296.711 246.855C277.395 256.671 253.251 261.579 224.278 261.579ZM324.259 256.829C324.259 252.079 324.892 246.696 326.159 240.68C327.425 234.664 329.009 228.41 330.908 221.919C332.967 215.269 334.946 209.016 336.846 203.158H244.226V178.222H370.806V256.829H324.259Z"/>
+      <path d="M272.645 247.33C294.019 247.33 311.672 249.388 325.605 253.504C339.537 257.621 350.461 263.241 358.377 270.366C366.294 277.49 371.835 285.644 375.001 294.827C378.326 303.851 379.989 313.351 379.989 323.325C379.989 333.299 378.168 342.878 374.526 352.061C370.885 361.085 364.869 369.159 356.478 376.284C348.245 383.409 337.241 389.029 323.467 393.145C309.851 397.262 292.911 399.32 272.645 399.32H101.656V247.33H272.645ZM161.028 351.823H270.271C279.137 351.823 286.657 351.269 292.832 350.161C299.006 348.894 303.914 347.073 307.556 344.699C311.355 342.324 314.047 339.395 315.63 335.912C317.372 332.27 318.243 328.075 318.243 323.325C318.243 318.575 317.372 314.459 315.63 310.976C314.047 307.334 311.355 304.326 307.556 301.951C303.914 299.576 299.006 297.835 292.832 296.727C286.657 295.46 279.137 294.827 270.271 294.827H161.028V351.823Z"/>
+      <path d="M231.725 560.206C235.581 560.206 242.592 558.803 250.305 554.597C407.709 468.357 463.449 429.094 463.449 325.326V114.285C463.449 85.5386 449.777 76.7744 428.042 67.3088C399.646 55.0389 283.609 14.0225 255.213 4.2073C247.851 1.75331 239.788 7.62939e-06 231.725 7.62939e-06C223.662 7.62939e-06 215.248 2.45404 208.236 4.2073C179.841 11.2182 63.8029 55.39 35.4075 67.3088C13.672 76.4234 0 85.5386 0 114.285V325.326C0 429.094 55.7401 468.007 213.144 554.597C220.857 558.803 227.868 560.206 231.725 560.206ZM231.725 502.713C227.518 502.713 223.311 501.661 213.846 496.403C87.2909 420.68 49.7804 398.244 49.7804 313.056V123.75C49.7804 117.44 51.1826 114.635 56.792 112.181C101.665 94.6531 177.387 70.4643 222.26 52.5849C225.765 51.1827 228.92 50.8323 231.725 50.8323C234.529 50.8323 237.684 51.1827 241.19 52.5849C285.712 70.4643 360.382 96.7567 406.307 112.181C412.266 114.285 413.318 117.44 413.318 123.75V313.056C413.318 398.244 375.808 420.68 249.253 496.403C240.138 501.661 235.932 502.713 231.725 502.713Z"/>
+    </svg>
+    <p class="wordmark">Gameday</p>
+    <h1><span class="line">Every player</span><span class="line">deserves an <span class="accent-word">entrance</span></span></h1>
+    <p>Professional stadium sound for every field, every team, every kid.</p>
+    <p class="soon">Coming soon to the App Store</p>
+  </main>
+
+  <section class="signup-band" aria-label="Email sign-up">
+    <!-- Posts to /subscribe in worker.js, which forwards it to Kit from the
+         server, so a visitor's browser never contacts Kit. -->
+    <div class="signup">
+      <h2>Be the first to know</h2>
+      <p>Get an email when Gameday lands on the App Store.</p>
+      <form id="signup-form" method="post" action="/subscribe">
+        <input type="email" name="email_address" placeholder="Email address" aria-label="Email address" autocomplete="email" required />
+        <input class="website" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <button type="submit">Subscribe</button>
+      </form>
+      <p class="signup-status" id="signup-status" role="status"></p>
+      <script>
+        document.getElementById('signup-form').addEventListener('submit', async (event) => {
+          event.preventDefault();
+          const form = event.target;
+          const status = document.getElementById('signup-status');
+          const button = form.querySelector('button');
+          button.disabled = true;
+          status.textContent = '';
+          try {
+            const response = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { accept: 'application/json' } });
+            status.textContent = (await response.json()).message;
+            if (response.ok) form.hidden = true;
+          } catch {
+            status.textContent = "That didn't go through. Please try again in a moment.";
+          }
+          button.disabled = false;
+        });
+      </script>
+    </div>
+  </section>
+</body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "name": "herald-website",
+  "main": "worker.js",
+  "compatibility_date": "2026-10-01",
+  "assets": { "directory": ".", "binding": "ASSETS" }
+}

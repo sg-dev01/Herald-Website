@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Join Your Team — Gameday</title>
+  <meta name="description" content="Pick your player's walkout songs with Gameday." />
+  <meta name="theme-color" content="#0064FF" />
+  <!-- The light icon by default (and on dark tab bars); light tab bars get
+       the dark icon. -->
+  <link rel="icon" type="image/png" sizes="48x48" href="/images/favicon-light.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/images/favicon-dark.png" media="(prefers-color-scheme: light)" />
+  <meta name="robots" content="noindex" />
+  <link rel="stylesheet" href="/fonts/fonts.css" />
+  <style>
+    /* Shown when a team QR code is scanned on a phone without Gameday
+       (with Gameday installed, the link opens the app instead). The code
+       comes from the address: /join/WX2HR5 (rewritten to this page by _redirects). */
+    :root {
+      --hero-blue: #0064FF;
+      --hero-blue-dark: #0054D7;
+      --white: #FFFFFF;
+      --ink: #0A0A0B;
+      --font: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; }
+    body {
+      background: var(--hero-blue);
+      color: var(--white);
+      font: 17px/1.5 var(--font);
+      display: flex;
+      justify-content: center;
+      padding: max(48px, env(safe-area-inset-top)) max(24px, env(safe-area-inset-right)) max(48px, env(safe-area-inset-bottom)) max(24px, env(safe-area-inset-left));
+    }
+    main { width: 100%; max-width: 420px; display: flex; flex-direction: column; align-items: center; gap: 28px; text-align: center; }
+    /* The badge artwork is dark; show it white on the blue page. */
+    .badge { width: 72px; height: 87px; filter: brightness(0) invert(1); }
+    h1 { margin: 0; font-size: 32px; line-height: 1.15; font-weight: 800; letter-spacing: -0.01em; text-wrap: balance; }
+    .lede { margin: 0; opacity: 0.86; text-wrap: balance; }
+    .code-card { width: 100%; background: var(--white); color: var(--ink); border-radius: 24px; padding: 24px; display: flex; flex-direction: column; gap: 6px; }
+    .code-label { font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #555; }
+    .code { font: 800 40px/1.1 ui-monospace, "SF Mono", Menlo, monospace; letter-spacing: 0.08em; }
+    .copy { margin-top: 8px; align-self: center; border: 0; border-radius: 999px; padding: 10px 18px; font: 600 15px var(--font); background: #EAF2FF; color: var(--hero-blue-dark); cursor: pointer; }
+    .copy:focus-visible, .store:focus-visible { outline: 3px solid var(--white); outline-offset: 3px; }
+    ol { margin: 0; padding: 0; list-style: none; counter-reset: step; display: flex; flex-direction: column; gap: 14px; text-align: left; width: 100%; }
+    ol li { counter-increment: step; display: flex; gap: 14px; align-items: baseline; }
+    ol li::before { content: counter(step); flex: none; width: 28px; height: 28px; border-radius: 50%; background: rgba(255,255,255,0.18); font-weight: 800; font-size: 15px; display: inline-flex; align-items: center; justify-content: center; }
+    .store { display: inline-block; border-radius: 999px; padding: 14px 28px; background: var(--white); color: var(--hero-blue-dark); font-weight: 800; text-decoration: none; }
+    .invalid .code-card, .invalid ol, .invalid .store { display: none; }
+    [hidden] { display: none !important; }
+  </style>
+</head>
+<body>
+  <main id="page">
+    <img class="badge" src="/images/gd-badge.svg" alt="Gameday" />
+    <h1 id="title">Join your team on Gameday</h1>
+    <p class="lede" id="lede">Pick your player's walkout songs, and they play at every at-bat.</p>
+
+    <div class="code-card">
+      <span class="code-label">Team Code</span>
+      <span class="code" id="code" aria-live="polite"></span>
+      <button class="copy" id="copy" type="button">Copy Code</button>
+    </div>
+
+    <ol>
+      <li><span>Get the free Gameday app.</span></li>
+      <li><span>Open Settings, then tap <strong>Join a Team as a Family</strong>.</span></li>
+      <li><span>Enter the code above, or scan your coach's QR code from inside the app.</span></li>
+    </ol>
+
+    <a class="store" id="store" href="" hidden>Get Gameday</a>
+  </main>
+
+  <script>
+    // Where "Get Gameday" goes. Empty until the app is in the App Store;
+    // set it to the App Store (or public TestFlight) link to show the button.
+    const APP_STORE_URL = "";
+
+    // Matches AppLinks.teamCode(from:) in the app: 6 characters, no
+    // look-alikes (0/O, 1/I/L).
+    const alphabet = /^[ABCDEFGHJKMNPQRSTUVWXYZ23456789]{6}$/;
+    const raw = decodeURIComponent(location.pathname.split("/").filter(Boolean)[1] || "");
+    const code = raw.toUpperCase().replace(/[\s-]/g, "");
+
+    if (alphabet.test(code)) {
+      document.getElementById("code").textContent = code.slice(0, 3) + " " + code.slice(3);
+    } else {
+      document.getElementById("page").classList.add("invalid");
+      document.getElementById("title").textContent = "This invite link isn't complete";
+      document.getElementById("lede").textContent = "Ask your coach for the team code, then enter it in the Gameday app under Settings › Join a Team as a Family.";
+    }
+
+    if (APP_STORE_URL) {
+      const store = document.getElementById("store");
+      store.href = APP_STORE_URL;
+      store.hidden = false;
+    }
+
+    document.getElementById("copy").addEventListener("click", async (event) => {
+      const button = event.currentTarget;
+      try {
+        await navigator.clipboard.writeText(code);
+        button.textContent = "Copied";
+      } catch {
+        const range = document.createRange();
+        range.selectNodeContents(document.getElementById("code"));
+        const selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+      }
+    });
+  </script>
+</body>
+</html>

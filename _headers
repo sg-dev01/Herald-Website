@@ -1,0 +1,4 @@
+# Cloudflare Pages. iOS reads this file to decide which links open Gameday;
+# it must be JSON, served over HTTPS with no redirect.
+/.well-known/apple-app-site-association
+  Content-Type: application/json

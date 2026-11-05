@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gameday — Every Player Deserves an Entrance</title>
+  <meta name="description" content="Professional stadium sound for every field, every team, every kid. AI-powered player announcements and walkout music for youth sports." />
+  <meta name="theme-color" content="#0064FF" />
+  <!-- The light icon by default (and on dark tab bars); light tab bars get
+       the dark icon. -->
+  <link rel="icon" type="image/png" sizes="48x48" href="/images/favicon-light.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/images/favicon-dark.png" media="(prefers-color-scheme: light)" />
+  <link rel="stylesheet" href="/fonts/fonts.css" />
+  <link href="css/styles.css?v=20261103" rel="stylesheet" />
+</head>
+<body>
+
+<!-- Logo badge, defined once and reused via <use> -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="gd-badge" viewBox="0 0 464 561">
+    <path d="M224.278 261.579C203.696 261.579 184.776 260.312 167.519 257.779C150.42 255.404 135.538 251.288 122.872 245.43C110.364 239.414 100.627 231.26 93.6611 220.969C86.8532 210.678 83.4492 197.695 83.4492 182.021C83.4492 166.347 86.9323 153.286 93.8985 142.836C100.865 132.229 110.839 123.838 123.822 117.663C136.962 111.33 152.557 106.818 170.606 104.126C188.813 101.435 209.079 100.089 231.402 100.089C260.692 100.089 285.232 102.781 305.023 108.164C324.971 113.547 340.17 121.225 350.62 131.2C361.069 141.016 366.689 152.732 367.481 166.347H305.735C303.835 162.864 300.352 159.54 295.286 156.373C290.219 153.048 282.62 150.357 272.487 148.299C262.354 146.24 248.659 145.211 231.402 145.211C211.137 145.211 194.671 146.478 182.005 149.011C169.34 151.386 160.078 155.265 154.22 160.648C148.362 166.031 145.433 173.155 145.433 182.021C145.433 189.779 148.441 196.191 154.457 201.258C160.473 206.324 170.131 210.124 183.43 212.657C196.729 215.19 214.303 216.457 236.152 216.457C251.509 216.457 264.808 215.823 276.049 214.557C287.449 213.132 297.74 210.995 306.922 208.145C316.264 205.295 325.525 201.733 334.708 197.458L340.408 204.345C330.592 222.869 316.026 237.039 296.711 246.855C277.395 256.671 253.251 261.579 224.278 261.579ZM324.259 256.829C324.259 252.079 324.892 246.696 326.159 240.68C327.425 234.664 329.009 228.41 330.908 221.919C332.967 215.269 334.946 209.016 336.846 203.158H244.226V178.222H370.806V256.829H324.259Z"/>
+    <path d="M272.645 247.33C294.019 247.33 311.672 249.388 325.605 253.504C339.537 257.621 350.461 263.241 358.377 270.366C366.294 277.49 371.835 285.644 375.001 294.827C378.326 303.851 379.989 313.351 379.989 323.325C379.989 333.299 378.168 342.878 374.526 352.061C370.885 361.085 364.869 369.159 356.478 376.284C348.245 383.409 337.241 389.029 323.467 393.145C309.851 397.262 292.911 399.32 272.645 399.32H101.656V247.33H272.645ZM161.028 351.823H270.271C279.137 351.823 286.657 351.269 292.832 350.161C299.006 348.894 303.914 347.073 307.556 344.699C311.355 342.324 314.047 339.395 315.63 335.912C317.372 332.27 318.243 328.075 318.243 323.325C318.243 318.575 317.372 314.459 315.63 310.976C314.047 307.334 311.355 304.326 307.556 301.951C303.914 299.576 299.006 297.835 292.832 296.727C286.657 295.46 279.137 294.827 270.271 294.827H161.028V351.823Z"/>
+    <path d="M231.725 560.206C235.581 560.206 242.592 558.803 250.305 554.597C407.709 468.357 463.449 429.094 463.449 325.326V114.285C463.449 85.5386 449.777 76.7744 428.042 67.3088C399.646 55.0389 283.609 14.0225 255.213 4.2073C247.851 1.75331 239.788 7.62939e-06 231.725 7.62939e-06C223.662 7.62939e-06 215.248 2.45404 208.236 4.2073C179.841 11.2182 63.8029 55.39 35.4075 67.3088C13.672 76.4234 0 85.5386 0 114.285V325.326C0 429.094 55.7401 468.007 213.144 554.597C220.857 558.803 227.868 560.206 231.725 560.206ZM231.725 502.713C227.518 502.713 223.311 501.661 213.846 496.403C87.2909 420.68 49.7804 398.244 49.7804 313.056V123.75C49.7804 117.44 51.1826 114.635 56.792 112.181C101.665 94.6531 177.387 70.4643 222.26 52.5849C225.765 51.1827 228.92 50.8323 231.725 50.8323C234.529 50.8323 237.684 51.1827 241.19 52.5849C285.712 70.4643 360.382 96.7567 406.307 112.181C412.266 114.285 413.318 117.44 413.318 123.75V313.056C413.318 398.244 375.808 420.68 249.253 496.403C240.138 501.661 235.932 502.713 231.725 502.713Z"/>
+  </symbol>
+  <symbol id="apple-logo" viewBox="0 0 24 24">
+    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+  </symbol>
+</svg>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">
+    <svg class="logo-badge" aria-hidden="true"><use href="#gd-badge"/></svg>
+    Gameday
+  </a>
+  <ul class="nav-links">
+    <li><a href="#benefits">Benefits</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#faq">FAQs</a></li>
+  </ul>
+  <a href="#download" class="btn-download">Download</a>
+</nav>
+
+<!-- HERO -->
+<section id="benefits" class="hero-section">
+  <div class="hero">
+    <h1>Every player<br>deserves an <span class="accent-word">entrance</span></h1>
+    <p>Professional stadium sound for every field, every team, every kid.</p>
+    <a href="#download" class="app-store-btn">
+      <svg width="24" height="24" aria-hidden="true"><use href="#apple-logo"/></svg>
+      <span class="app-store-btn-text">
+        <span class="app-store-btn-pre">Pre-order on the</span>
+        <span class="app-store-btn-main">App Store</span>
+      </span>
+    </a>
+  </div>
+
+  <div class="hero-stage">
+    <div class="hero-phones">
+      <div class="phone-mockup device cycle left" data-cycle="3200">
+        <img class="active" src="images/hero-team-green.webp" alt="Gameday team roster in green" width="920" height="2000" />
+        <img src="images/hero-team-lightmode-blue.webp" alt="Gameday team roster in blue" width="920" height="2000" />
+        <img src="images/hero-team-lightmode-purple.webp" alt="Gameday team roster in purple" width="920" height="2000" />
+        <img src="images/hero-team-red.webp" alt="Gameday team roster in red" width="920" height="2000" />
+        <img src="images/hero-team-yellow.webp" alt="Gameday team roster in yellow" width="920" height="2000" />
+      </div>
+      <div class="phone-mockup device center">
+        <img src="images/hero-home-dark.webp" alt="Gameday Home screen" width="920" height="2000" />
+      </div>
+      <div class="phone-mockup device cycle right" data-cycle="3800">
+        <img class="active" src="images/hero-announce-tiles-dark.webp" alt="Gameday Announce screen with colorful tiles" width="920" height="2000" />
+        <img src="images/hero-announce-chips-light.webp" alt="Gameday Announce screen as a list" width="920" height="2000" />
+        <img src="images/hero-announce-tiles-light.webp" alt="Gameday Announce screen with cards" width="920" height="2000" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NO MIC SECTION -->
+<section class="no-mic-section" id="features">
+  <div class="section-inner">
+    <div class="steps" aria-label="Type. Generate. Play.">
+      <span class="step"><span class="step-num" aria-hidden="true">1</span>Type.</span>
+      <span class="step-line" aria-hidden="true"></span>
+      <span class="step"><span class="step-num" aria-hidden="true">2</span>Generate.</span>
+      <span class="step-line" aria-hidden="true"></span>
+      <span class="step step-play"><span class="step-num" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M3.5 2.2v7.6L10 6z"/></svg></span>Play.</span>
+    </div>
+    <h2 class="no-mic-title"><span class="blue">Type, Generate, and Play</span><br>from your iPhone.</h2>
+
+    <div class="demo-stage">
+      <article class="demo-card demo-voice">
+        <div class="demo-meta"><svg viewBox="0 0 14 12" aria-hidden="true"><path d="M1 5h1.4v2H1zM3.6 3h1.4v6H3.6zM6.3 0h1.4v12H6.3zM9 2.5h1.4v7H9zM11.6 5H13v2h-1.4z"/></svg>Default Walkout Phrase</div>
+        <p class="demo-title">Now batting for the Travis Wildcats number 1 Tyler Brooks</p>
+        <button type="button" class="demo-preview" data-audio="audio/demo-voice.m4a" aria-pressed="false"><svg class="icon-play" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 1.2v9.6L10.5 6z"/></svg><svg class="icon-pause" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 1.5h2.6v9H2.5zM6.9 1.5h2.6v9H6.9z"/></svg>Preview Voice</button>
+      </article>
+
+      <svg class="demo-arrow from-voice" viewBox="0 0 120 64" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 40C38 62 84 58 111 12"/><path d="M90 16l22-6 3 23"/></svg>
+
+      <article class="demo-card demo-player" id="demo-player">
+        <div class="demo-player-top">
+          <h3 class="demo-title">Tyler Brooks #1</h3>
+          <span class="demo-time" id="demo-time">0:16</span>
+        </div>
+        <div class="demo-meta"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M4.5 1.2 11 0v8.4a2 2 0 1 1-1.3-1.9V2.4L5.8 3.1v6.8a2 2 0 1 1-1.3-1.9z"/></svg>Neon Victory • Gameday</div>
+        <div class="demo-progress" id="demo-progress" role="progressbar" aria-label="Playback progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span></span></div>
+        <button type="button" class="demo-play" id="demo-play" data-audio="audio/demo-intro.m4a" aria-pressed="false"><svg class="icon-play" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 1.2v9.6L10.5 6z"/></svg><svg class="icon-pause" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 1.5h2.6v9H2.5zM6.9 1.5h2.6v9H6.9z"/></svg><span id="demo-play-label">Play</span></button>
+      </article>
+
+      <svg class="demo-arrow from-song" viewBox="0 0 120 64" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 40C38 62 84 58 111 12"/><path d="M90 16l22-6 3 23"/></svg>
+
+      <article class="demo-card demo-song">
+        <div class="demo-song-top">
+          <div class="demo-meta"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M4.5 1.2 11 0v8.4a2 2 0 1 1-1.3-1.9V2.4L5.8 3.1v6.8a2 2 0 1 1-1.3-1.9z"/></svg>Electronic</div>
+          <span class="demo-time">2m03s</span>
+        </div>
+        <p class="demo-title">Neon Victory</p>
+        <p class="demo-sub">Gameday</p>
+        <div class="demo-song-bottom">
+          <button type="button" class="demo-preview" data-audio="audio/demo-song.m4a" aria-pressed="false"><svg class="icon-play" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 1.2v9.6L10.5 6z"/></svg><svg class="icon-pause" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 1.5h2.6v9H2.5zM6.9 1.5h2.6v9H6.9z"/></svg>Preview Song</button>
+          <img class="demo-art" src="images/demo-album-art.jpg" alt="" width="240" height="240" />
+        </div>
+      </article>
+    </div>
+
+    <div class="no-mic-copy">
+        <p>Connect via Bluetooth or plug into an existing system. Open the app, tap a player, hear their announcement and walkout song.</p>
+        <p>Connect your Apple Music Subscription and DJ your whole game with Gameday ready playlists.</p>
+      </div>
+  </div>
+</section>
+
+<!-- FEATURES 3-COL -->
+<section class="features-section">
+  <div class="section-inner">
+    <div class="features-grid">
+
+      <article class="feature-card accent-green">
+        <div class="feature-kicker">AI Powered</div>
+        <h3 class="feature-title">Player Intros</h3>
+        <p class="feature-desc">Type your players names, choose a voice, tap generate.</p>
+        <div class="feature-visual">
+          <div class="feature-phone device cycle" data-cycle="3000">
+            <img class="active" src="images/intros-green.webp" alt="Gameday team roster in green" width="920" height="2000" />
+            <img src="images/intros-pink.webp" alt="Gameday team roster in pink" width="920" height="2000" />
+            <img src="images/intros-red-light.webp" alt="Gameday team roster in red" width="920" height="2000" />
+            <img src="images/intros-purple.webp" alt="Gameday team roster in purple" width="920" height="2000" />
+            <img src="images/intros-red.webp" alt="Gameday team roster in dark red" width="920" height="2000" />
+          </div>
+        </div>
+      </article>
+
+      <article class="feature-card accent-purple">
+        <div class="feature-kicker">Game Ready</div>
+        <h3 class="feature-title">Music Playlists</h3>
+        <p class="feature-desc">Connect your Apple Music subscription and play from our curated Gameday Playlists</p>
+        <div class="feature-visual">
+          <div class="feature-phone device cycle" data-cycle="3500">
+            <img class="active" src="images/music-gamedayselects-light.webp" alt="Gameday Selects playlists" width="920" height="2000" />
+            <img src="images/music-gdanthems-dark.webp" alt="Gameday Anthems playlist" width="920" height="2000" />
+            <img src="images/music-sluggermix-dark.webp" alt="Slugger Mix playlist" width="920" height="2000" />
+            <img src="images/music-miaminights-dark.webp" alt="Now playing: Miami Nights" width="920" height="2000" />
+          </div>
+        </div>
+      </article>
+
+      <article class="feature-card accent-blue">
+        <div class="feature-kicker">AI Powered</div>
+        <h3 class="feature-title">Announcements</h3>
+        <p class="feature-desc">Gameday comes pre-loaded with in-game announcements for every moment of the game or write your own.</p>
+        <div class="feature-visual">
+          <div class="feature-phone device cycle" data-cycle="3500">
+            <img class="active" src="images/announce-dark-tiles.webp" alt="Gameday Announce screen showing colorful announcement tiles in dark mode" width="920" height="2000" />
+            <img src="images/announce-light-list.webp" alt="Gameday Announce screen showing announcements as a list" width="920" height="2000" />
+            <img src="images/announce-light-cards.webp" alt="Gameday Announce screen showing announcement cards with play buttons" width="920" height="2000" />
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- TEAMS SECTION -->
+<section class="teams-section" id="teams" data-mode="dark">
+  <div class="section-inner">
+    <button type="button" class="mode-toggle" id="mode-toggle" aria-pressed="false" aria-label="Switch to light mode">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 14.6A8.5 8.5 0 0 1 9.4 3.5a.6.6 0 0 0-.8-.7A9.5 9.5 0 1 0 21.2 15.4a.6.6 0 0 0-.7-.8z"/></svg>
+    </button>
+
+    <h2 class="teams-title">Customize<br>your Teams</h2>
+
+    <div class="team-swatches" role="group" aria-label="Team colors">
+      <button type="button" class="team-swatch" data-color="red" style="--swatch: var(--team-red)" aria-label="Red" aria-pressed="true"></button>
+      <button type="button" class="team-swatch" data-color="orange" style="--swatch: var(--team-orange)" aria-label="Orange" aria-pressed="false" hidden></button>
+      <button type="button" class="team-swatch" data-color="yellow" style="--swatch: var(--team-yellow)" aria-label="Yellow" aria-pressed="false"></button>
+      <button type="button" class="team-swatch" data-color="green" style="--swatch: var(--team-green)" aria-label="Green" aria-pressed="false"></button>
+      <button type="button" class="team-swatch" data-color="blue" style="--swatch: var(--hero-blue)" aria-label="Blue" aria-pressed="false"></button>
+      <button type="button" class="team-swatch" data-color="purple" style="--swatch: var(--team-purple)" aria-label="Purple" aria-pressed="false"></button>
+      <button type="button" class="team-swatch" data-color="pink" style="--swatch: var(--team-pink)" aria-label="Pink" aria-pressed="false"></button>
+      <button type="button" class="team-swatch" data-color="gray" style="--swatch: var(--team-gray-light)" aria-label="Gray" aria-pressed="false"></button>
+    </div>
+
+    <div class="teams-phones">
+      <div class="team-phone add" hidden>
+        <img src="images/team-add.jpg" alt="Add team screen" width="400" height="720" />
+      </div>
+      <div class="team-phone device back" hidden>
+        <img src="images/team-list-light.jpg" alt="Team list screen" width="480" height="960" />
+      </div>
+      <div class="team-phone device front">
+        <img id="team-detail-img" src="images/team-detail-red-dark.webp" alt="Team detail screen" width="920" height="2000" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAMILIES -->
+<section class="families-section" id="families">
+  <div class="section-inner">
+    <div class="families-card">
+      <div class="families-phone device">
+        <img src="images/parents-walkups.webp" alt="A player's walkout list in Gameday: five songs, in order, with an Add Song button" width="920" height="2000" loading="lazy" />
+      </div>
+      <div class="families-copy">
+        <div class="feature-kicker">For Parents</div>
+        <h2 class="families-title">Let players <span class="blue">pick their own</span> walk-up songs.</h2>
+        <p class="families-lead">Coaches share one QR code. Parents scan it, find their player, and choose the songs. No group texts, no collecting playlists.</p>
+        <ol class="families-steps">
+          <li><span class="step-num">1</span><div><strong>Coach shares the QR code</strong><span>Print it, post it, or show it at practice.</span></div></li>
+          <li><span class="step-num">2</span><div><strong>Parents scan and pick songs</strong><span>Each player builds a list of up to 10 walk-up songs.</span></div></li>
+          <li><span class="step-num">3</span><div><strong>Songs land on the coach&rsquo;s phone</strong><span>One song each at-bat, in order, ready for game day.</span></div></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section" id="pricing">
+  <div class="section-inner">
+    <div class="eyebrow">Pricing</div>
+    <h2 class="section-title">One season.<br>Every player.</h2>
+    <p class="section-sub">Start free. No credit card required.</p>
+
+    <div class="pricing-grid">
+
+      <!-- Free plan -->
+      <div class="pricing-card">
+        <div class="pricing-plan">Gameday</div>
+        <div class="pricing-price">$0</div>
+        <ul class="pricing-features">
+          <li class="pricing-feature">10 lifetime generations</li>
+          <li class="pricing-feature">3 Teams</li>
+          <li class="pricing-feature">Play offline for free. Forever.</li>
+          <li class="pricing-feature">Upload your own MP3s</li>
+          <li class="pricing-feature">2 AI Voices</li>
+        </ul>
+        <a href="#download" class="btn-plan">Start for Free</a>
+      </div>
+
+      <!-- Center phone -->
+      <div class="pricing-phone device cycle" data-cycle="2600">
+        <img class="active" src="images/hero-home-dark.webp" alt="Gameday Home screen" width="920" height="2000" />
+        <img data-src="images/music-gamedayselects-light.webp" alt="Gameday Music screen" width="920" height="2000" />
+        <img data-src="images/announce-dark-tiles.webp" alt="Gameday Announce screen" width="920" height="2000" />
+        <img data-src="images/intros-green.webp" alt="Gameday team roster" width="920" height="2000" />
+        <img data-src="images/team-detail-red-dark.webp" alt="Gameday team roster" width="920" height="2000" />
+        <img data-src="images/music-gdanthems-dark.webp" alt="Gameday Music screen" width="920" height="2000" />
+        <img data-src="images/hero-announce-tiles-dark.webp" alt="Gameday Announce screen" width="920" height="2000" />
+        <img data-src="images/hero-team-lightmode-blue.webp" alt="Gameday team roster" width="920" height="2000" />
+        <img data-src="images/team-detail-blue-light.webp" alt="Gameday team roster" width="920" height="2000" />
+        <img data-src="images/music-sluggermix-dark.webp" alt="Gameday Music screen" width="920" height="2000" />
+        <img data-src="images/announce-light-list.webp" alt="Gameday Announce screen" width="920" height="2000" />
+        <img data-src="images/intros-pink.webp" alt="Gameday team roster" width="920" height="2000" />
+        <img data-src="images/team-detail-green-dark.webp" alt="Gameday team roster" width="920" height="2000" />
+        <img data-src="images/music-miaminights-dark.webp" alt="Gameday Music screen" width="920" height="2000" />
+        <img data-src="images/hero-announce-chips-light.webp" alt="Gameday Announce screen" width="920" height="2000" />
+        <img data-src="images/hero-team-yellow.webp" alt="Gameday team roster" width="920" height="2000" />
+        <img data-src="images/team-detail-pink-light.webp" alt="Gameday team roster" width="920" height="2000" />
+        <img data-src="images/announce-light-cards.webp" alt="Gameday Announce screen" width="920" height="2000" />
+        <img data-src="images/intros-red-light.webp" alt="Gameday team roster" width="920" height="2000" />
+        <img data-src="images/team-detail-purple-dark.webp" alt="Gameday team roster" width="920" height="2000" />
+        <img data-src="images/hero-team-lightmode-purple.webp" alt="Gameday team roster" width="920" height="2000" />
+        <img data-src="images/team-detail-yellow-light.webp" alt="Gameday team roster" width="920" height="2000" />
+        <img data-src="images/intros-purple.webp" alt="Gameday team roster" width="920" height="2000" />
+        <img data-src="images/team-detail-gray-dark.webp" alt="Gameday team roster" width="920" height="2000" />
+        <img data-src="images/intros-red.webp" alt="Gameday team roster" width="920" height="2000" />
+        <img data-src="images/team-detail-red-light.webp" alt="Gameday team roster" width="920" height="2000" />
+        <img data-src="images/team-detail-blue-dark.webp" alt="Gameday team roster" width="920" height="2000" />
+        <img data-src="images/team-detail-green-light.webp" alt="Gameday team roster" width="920" height="2000" />
+        <img data-src="images/team-detail-pink-dark.webp" alt="Gameday team roster" width="920" height="2000" />
+        <img data-src="images/team-detail-purple-light.webp" alt="Gameday team roster" width="920" height="2000" />
+        <img data-src="images/team-detail-yellow-dark.webp" alt="Gameday team roster" width="920" height="2000" />
+        <img data-src="images/team-detail-gray-light.webp" alt="Gameday team roster" width="920" height="2000" />
+      </div>
+
+      <!-- Paid plan -->
+      <div class="pricing-card dark" id="paid-plan">
+        <div class="pricing-toggle">
+          <span class="pricing-plan">Gameday</span>
+          <span class="pricing-save">Save 17% on yearly plan</span>
+          <button type="button" class="toggle-track" id="pricing-toggle" aria-pressed="false" aria-label="Switch to yearly billing">
+            <span class="toggle-thumb"></span>
+          </button>
+        </div>
+        <div class="pricing-price"><span id="pricing-amount">$4.99</span><span class="pricing-period" id="pricing-period">/month</span></div>
+        <ul class="pricing-features">
+          <li class="pricing-feature">Hundreds of generations per month</li>
+          <li class="pricing-feature">Unlimited Teams and Players</li>
+          <li class="pricing-feature">Unlimited MP3 plays</li>
+          <li class="pricing-feature">All Gameday AI Voices</li>
+          <li class="pricing-feature">Access to all Gameday Music Tracks</li>
+        </ul>
+        <a href="#download" class="btn-plan">Download</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="section-inner">
+    <div class="eyebrow">FAQs</div>
+    <h2 class="section-title faq-title">Got questions? Here<br>are the answers.</h2>
+
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button type="button" class="faq-question" aria-expanded="false">
+          Does Gameday work without an internet connection?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer"><div>It can. All player announcements are pre-generated and stored on your device. Walkout music can be imported from your local library and plays fully offline — no WiFi or cellular signal required. This is by design, because games happen in places with poor signal all the time.<br><br>*Players who choose Apple Streaming songs will require WiFi or cellular signal.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question" aria-expanded="false">
+          What are AI generations and how do credits work?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer"><div>A generation is when Gameday creates a new AI voice announcement for a player. Free accounts get 10 lifetime generations. Gameday subscribers get unlimited generations subject to fair use. Playing an existing announcement never uses a credit — generate once, play all season for free.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question" aria-expanded="false">
+          Can I use Gameday for the opposing team too?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer"><div>Absolutely. Many coaches or Game entertainment coordinators become the unofficial league DJ — building rosters for every team they play throughout the season. By tournament time, you can announce any player from any team in your league with one tap.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question" aria-expanded="false">
+          What are the free plan limitations?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer"><div>Free accounts include 10 lifetime AI generations, up to 3 teams, unlimited players, unlimited music, and 2 AI voices. It's enough to try Gameday with your full starting lineup. When you're ready for more, subscribing takes about 30 seconds.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-question" aria-expanded="false">
+          Do I need Apple Music to use Gameday?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer"><div>No. Gameday works with any MP3 or audio file you import from your device or cloud storage. Apple Music is an optional add-on that lets you stream curated Gameday playlists between innings or select songs available on Apple Music for player walkups. Using Gameday original songs or uploading your own music means your whole Gameday program can run offline.</div></div>
+      </div>
+
+    </div>
+
+    <div class="faq-contact">
+      If you can't find the answer or need help, email us at <a href="mailto:help@getgameday.app">help@getgameday.app</a>
+    </div>
+  </div>
+</section>
+
+<!-- DOWNLOAD CTA -->
+<section class="cta-section" id="download">
+  <div class="cta-band">
+    <svg class="cta-badge" aria-hidden="true"><use href="#gd-badge"/></svg>
+    <h2 class="cta-title">Every player<br>deserves an <span class="accent-word">entrance</span></h2>
+    <a href="#download" class="app-store-btn light">
+      <svg width="24" height="24" aria-hidden="true"><use href="#apple-logo"/></svg>
+      <span class="app-store-btn-text">
+        <span class="app-store-btn-pre">Pre-order on the</span>
+        <span class="app-store-btn-main">App Store</span>
+      </span>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="footer-logo">
+          <svg class="logo-badge" aria-hidden="true"><use href="#gd-badge"/></svg>
+          Gameday
+        </a>
+        <div class="footer-tagline">Every Player Deserves an Entrance.</div>
+        <div class="footer-socials">
+          <a href="#" class="social-btn" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.8c0-.9.3-1.6 1.6-1.6h1.7V4.4c-.3 0-1.3-.1-2.5-.1-2.5 0-4.1 1.5-4.1 4.2v2.3H7.4V14h2.8v8h3.3z"/></svg>
+          </a>
+          <a href="#" class="social-btn" aria-label="X">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.8 3h3.1l-6.8 7.8L22 21h-6.3l-4.9-6.4L5.2 21H2.1l7.3-8.3L1.8 3h6.4l4.4 5.8L17.8 3zm-1.1 16.2h1.7L7.4 4.7H5.6l11.1 14.5z"/></svg>
+          </a>
+          <a href="#" class="social-btn" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg>
+          </a>
+          <a href="mailto:help@getgameday.app" class="contact-btn">Contact</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Product</h4>
+        <ul class="footer-links">
+          <li><a href="#benefits">Benefits</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#download">Download</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>More</h4>
+        <ul class="footer-links">
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="#faq">Questions</a></li>
+          <li><a href="mailto:help@getgameday.app">Support</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      Sounds Good Team LLC © 2026. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js?v=20261103"></script>
+
+</body>
+</html>

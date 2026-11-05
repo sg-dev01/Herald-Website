@@ -1,0 +1,10 @@
+# Cloudflare Pages.
+
+# Until the full site launches, gameherald.app shows the coming-soon page.
+# Delete this rule to put index.html live.
+/  /coming-soon  200
+
+# A coach's QR code links to /join/<CODE>; serve the join page for any code
+# (it reads the code from the address). The page lives at /join, which this
+# rule can't match, so the rewrite never loops.
+/join/*  /join  200

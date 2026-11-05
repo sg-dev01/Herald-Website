@@ -1,0 +1,12 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["38MR9AG743.com.soundsgoodteam.gameday"],
+        "components": [
+          { "/": "/join/*", "comment": "Team invites from a coach's QR code" }
+        ]
+      }
+    ]
+  }
+}

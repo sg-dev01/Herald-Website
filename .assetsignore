@@ -1,0 +1,6 @@
+.git
+.claude
+.wrangler
+.DS_Store
+worker.js
+wrangler.jsonc
