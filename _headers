@@ -2,3 +2,7 @@
 # it must be JSON, served over HTTPS with no redirect.
 /.well-known/apple-app-site-association
   Content-Type: application/json
+
+# Images for emails: reachable by link, kept out of search results.
+/images/email/*
+  X-Robots-Tag: noindex
